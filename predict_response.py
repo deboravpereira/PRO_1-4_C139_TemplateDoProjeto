@@ -26,9 +26,14 @@ classes = pickle.load(open('./classes.pkl','rb'))
 
 def preprocess_user_input(user_input):
 
-    input_word_token_1 = nltk.word_tokenize(user_input)
-    input_word_token_2 = get_stem_words(input_word_token_1, ignore_words) 
-    input_word_token_2 = sorted(list(set(input_word_token_2)))
+    #Tokenize a entrada do usuário use a variável input_word_token_1 
+   
+    
+    #Converta a palavra em sua forma raiz: stemização. Use a variável input_word_token_2
+   
+    
+    #Remova as duplicidades e classifique a entrada
+   
 
     bag=[]
     bag_of_words = []
@@ -61,8 +66,9 @@ def bot_response(user_imput):
 
    for intent in intents['intents']:
     if intent['tag']==predicted_class:
-       
-        bot_response = random.choice(intent['responses'])
+
+        #Selecione uma resposta aleatória do robô
+        
     
         return bot_response
     
@@ -71,7 +77,8 @@ def bot_response(user_imput):
 print("Oi, eu sou a Estela, como posso ajudar?")
 
 while True:
-    user_input = input("Digite sua mensagem aqui:")
+    #Obtenha a entrada do usuário
+    
     print("Entrada do Usuário: ", user_input)
 
     response = bot_response(user_input)
